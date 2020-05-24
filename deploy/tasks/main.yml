@@ -1,0 +1,16 @@
+---
+- name: list deploypath
+  shell: ls -1 /opt/tomcat/webapps/
+  register: contents
+- name: remove
+  file: 
+    path: /opt/tomcat/webapps/{{ item }} 
+    state: absent
+  with_items: "{{ contents.stdout_lines }}"
+
+- name: deploy war file
+  get_url:
+    url: http://52.27.177.19:8081/repository/mouni/com/efsavage/hello-world-war/{{war_version}}/hello-world-war-{{war_version}}.war
+    dest: /opt/tomcat/webapps/hello.war
+    username: admin
+    password: cggrL@123
