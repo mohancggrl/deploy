@@ -10,7 +10,7 @@
 
 - name: deploy war file
   get_url:
-    url: http://52.27.177.19:8081/repository/mouni/com/efsavage/hello-world-war/{{war_version}}/hello-world-war-{{war_version}}.war
+    url: http://35.154.218.167:8081/repository/mohan-group/org/springframework/samples/spring-framework-petclinic/5.2.4/spring-framework-petclinic-5.2.4.war
     dest: /opt/tomcat/webapps/mahii.war
-    username: admin
-    password: cggrL@123
+    username: {{ nexususer }}
+    password: {{ nexuspassword }}
