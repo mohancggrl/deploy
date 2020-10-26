@@ -11,6 +11,6 @@
 - name: deploy war file
   get_url:
     url: http://35.154.218.167:8081/repository/mohan-group/org/springframework/samples/spring-framework-petclinic/5.2.4/spring-framework-petclinic-5.2.4.war
-    dest: /opt/tomcat/webapps/mahii.war
-    username: {{ nexususer }}
-    password: {{ nexuspassword }}
+    dest: /opt/tomcat/webapps/petclinic.war
+    username: "{{ nexususer }}"
+    password: "{{ nexuspassword }}"
